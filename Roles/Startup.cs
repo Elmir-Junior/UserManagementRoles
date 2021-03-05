@@ -31,30 +31,19 @@ namespace Roles
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseMySql(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<ApplicationUser, IdentityRole>()//options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => options.Password = new PasswordOptions
+            {
+                RequireDigit = false,
+                RequiredLength = 6,
+                RequireUppercase = false,
+                RequireNonAlphanumeric = false
+            })//options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().
                 AddDefaultUI();
             //services.AddScoped<UserManager<ApplicationUser>>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
-
-        //private async Task CreateRoles(IServiceProvider serviceProvider)
-        //{
-        //    var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-        //    var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-        //    string[] rolesNames = { "Admin", "User", "Operator" };
-        //    IdentityResult result;
-        //    foreach (var namesRole in rolesNames)
-        //    {
-        //        var roleExist = await roleManager.RoleExistsAsync(namesRole);
-        //        if (!roleExist)
-        //        {
-        //            result = await roleManager.CreateAsync(new IdentityRole(namesRole));
-        //        }
-        //    }
-        //}
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -86,9 +75,6 @@ namespace Roles
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-
-            //CreateRoles(serviceProvider).Wait();
-
         }
     }
 }
