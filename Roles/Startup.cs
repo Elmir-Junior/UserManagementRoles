@@ -29,8 +29,9 @@ namespace Roles
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySql(
+                options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<ApplicationDbContext>();
             services.AddIdentity<ApplicationUser, IdentityRole>(options => options.Password = new PasswordOptions
             {
                 RequireDigit = false,
@@ -38,8 +39,8 @@ namespace Roles
                 RequireUppercase = false,
                 RequireNonAlphanumeric = false
             })//options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().
-                AddDefaultUI();
+                .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders()
+                .AddDefaultUI();
             //services.AddScoped<UserManager<ApplicationUser>>();
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -62,7 +63,8 @@ namespace Roles
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
+            //ContextSeed.SeedRoleAsync(serviceProvider).Wait();
             app.UseRouting();
 
             app.UseAuthentication();
@@ -72,7 +74,7 @@ namespace Roles
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=RoleManager}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

@@ -1,31 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elmir\\source\\repos\\Roles\\Roles\\Roles.csproj": {}
+    "C:\\Users\\elmir\\Documents\\Projetos Git\\UserManagementRoles\\Roles\\Roles.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elmir\\source\\repos\\Roles\\Roles\\Roles.csproj": {
+    "C:\\Users\\elmir\\Documents\\Projetos Git\\UserManagementRoles\\Roles\\Roles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elmir\\source\\repos\\Roles\\Roles\\Roles.csproj",
+        "projectUniqueName": "C:\\Users\\elmir\\Documents\\Projetos Git\\UserManagementRoles\\Roles\\Roles.csproj",
         "projectName": "Roles",
-        "projectPath": "C:\\Users\\elmir\\source\\repos\\Roles\\Roles\\Roles.csproj",
+        "projectPath": "C:\\Users\\elmir\\Documents\\Projetos Git\\UserManagementRoles\\Roles\\Roles.csproj",
         "packagesPath": "C:\\Users\\elmir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elmir\\source\\repos\\Roles\\Roles\\obj\\",
+        "outputPath": "C:\\Users\\elmir\\Documents\\Projetos Git\\UserManagementRoles\\Roles\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\elmir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,10 +78,6 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[3.2.4, )"
             }
           },
           "imports": [
@@ -101,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -16,7 +16,7 @@ namespace Roles.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        
+
         public RoleManagerController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
@@ -58,7 +58,7 @@ namespace Roles.Controllers
                 thisViewModel.LastName = user.LastName;
                 thisViewModel.Email = user.Email;
                 thisViewModel.Roles = await getuserRoles(user);
-                
+
                 userRolesViewModel.Add(thisViewModel);
             }
             return View(userRolesViewModel);
